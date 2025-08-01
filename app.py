@@ -31,12 +31,13 @@ ui_icon = os.environ.get("BEDROCK_AGENT_TEST_UI_ICON")
 
 def init_session_state():
     st.session_state.session_id = str(uuid.uuid4())
-    st.session_state.messages = []
+    st.session_state.messages = [
+        {"role": "assistant", "content": "Hello, how can I help you today?"}
+    ]
     st.session_state.citation_nums = []
     st.session_state.citations = []
     st.session_state.titan_citation_style = False
     st.session_state.trace = {}
-
 
 # General page configuration and initialization
 st.set_page_config(page_title=ui_title, page_icon=ui_icon, layout="wide")
